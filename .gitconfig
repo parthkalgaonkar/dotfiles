@@ -1,3 +1,16 @@
 [user]
 	name = Parth Kalgaonkar
-	email = parthkalgaonkar@gmail.com
+	email = parth.kalgaonkar@arm.com
+[push]
+	default = current
+[pull]
+	rebase = true
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	editor = vim
