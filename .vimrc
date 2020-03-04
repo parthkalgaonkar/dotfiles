@@ -11,6 +11,8 @@ filetype plugin on
 
 colorscheme nord
 set relativenumber number
+syntax on
+set bs=2
 
 nmap <silent> <F8> :call ToggleDiff()<CR>
 function ToggleDiff()
