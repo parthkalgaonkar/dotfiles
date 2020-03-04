@@ -11,3 +11,12 @@ filetype plugin on
 
 colorscheme nord
 set relativenumber number
+
+nmap <silent> <F8> :call ToggleDiff()<CR>
+function ToggleDiff()
+	if(&diff)
+		windo diffoff
+	else
+		windo diffthis
+	endif
+endfunction
