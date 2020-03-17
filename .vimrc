@@ -11,6 +11,7 @@ filetype plugin on
 
 colorscheme nord
 set relativenumber number
+set autoindent smartindent
 syntax on
 set bs=2
 
