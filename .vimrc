@@ -23,3 +23,9 @@ function ToggleDiff()
 		windo diffthis
 	endif
 endfunction
+
+function TrimTrailing()
+	let l:save = winsaveview()
+	keeppatterns %s/\s\+$//e
+	call winrestview(l:save)
+endfunction
