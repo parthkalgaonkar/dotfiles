@@ -2,9 +2,9 @@
 loc=$(pwd)
 cd ~
 
-ln -s ${loc}/.vimrc ./.vimrc
-ln -s ${loc}/.tmux.conf ./.tmux.conf
-ln -s ${loc}/.zshrc ./.zshrc
-ln -s ${loc}/.cshrc ./.cshrc
-ln -s ${loc}/.bashrc ./.bashrc
-ln -s ${loc}/.gitconfig ./.gitconfig
+ln -sf ${loc}/.vimrc ./.vimrc
+ln -sf ${loc}/.tmux.conf ./.tmux.conf
+ln -sf ${loc}/.zshrc ./.zshrc
+ln -sf ${loc}/.cshrc ./.cshrc
+ln -sf ${loc}/.bashrc ./.bashrc
+ln -sf ${loc}/.gitconfig ./.gitconfig
