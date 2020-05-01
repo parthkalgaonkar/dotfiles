@@ -1,0 +1,10 @@
+#!/bin/bash
+loc=$(pwd)
+cd ~
+
+ln -s ${loc}/.vimrc ./.vimrc
+ln -s ${loc}/.tmux.conf ./.tmux.conf
+ln -s ${loc}/.zshrc ./.zshrc
+ln -s ${loc}/.cshrc ./.cshrc
+ln -s ${loc}/.bashrc ./.bashrc
+ln -s ${loc}/.gitconfig ./.gitconfig
