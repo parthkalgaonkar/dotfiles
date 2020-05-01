@@ -8,3 +8,4 @@ ln -sf ${loc}/.zshrc ./.zshrc
 ln -sf ${loc}/.cshrc ./.cshrc
 ln -sf ${loc}/.bashrc ./.bashrc
 ln -sf ${loc}/.gitconfig ./.gitconfig
+ln -sf ${loc}/.dir_colors ./.dir_colors
