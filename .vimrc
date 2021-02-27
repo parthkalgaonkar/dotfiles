@@ -30,3 +30,5 @@ function TrimTrailing()
 	keeppatterns %s/\s\+$//e
 	call winrestview(l:save)
 endfunction
+
+let g:user_emmet_leader_key=','
