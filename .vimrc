@@ -6,6 +6,7 @@ call vundle#begin()
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'arcticicestudio/nord-vim'
 	Plugin 'preservim/nerdtree'
+	Plugin 'mattn/emmet-vim'
 call vundle#end()
 filetype plugin on
 
