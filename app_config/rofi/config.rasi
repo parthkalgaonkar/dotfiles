@@ -1,0 +1,10 @@
+configuration {
+	modi: "drun,filebrowser,combi,calc";
+	font: "JetBrains Mono 10";
+	combi-modi: "drun,filebrowser";
+}
+
+
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "sidebar-nord"

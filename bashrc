@@ -119,3 +119,4 @@ fi
 alias tmux='tmux -u'
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 LS_COLORS+=':ow=01;34'
+. "$HOME/.cargo/env"

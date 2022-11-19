@@ -1,0 +1,183 @@
+/**
+ * ROFI Color theme
+ * User: scarecrow
+ * Copyright: Dave Davenport
+ */
+
+* {
+    text-color:  #d8dee9;
+    background-color:  #1c1f26;
+    dark: #090a0d;
+    // Black
+    darkblack:   #252933;
+    black:       #3b4252;
+    lightblack:  #4c566a;
+    //
+    // Red
+    red:         #bf616a;
+    lightred:    #bf616a;
+    //
+    // Green
+    green:       #a3be8c;
+    lightgreen:  #a3be8c;
+    //
+    // Yellow
+    yellow:      #ebcb8b;
+    lightyellow:     #ebcb8b;
+    //
+    // Blue
+    blue:      #81a1c1;
+    lightblue:     #81a1c1;
+    //
+    // Magenta
+    magenta:      #b48ead;
+    lightmagenta:     #b48ead;
+    //
+    // Cyan
+    cyan:      #88c0d0;
+    lightcyan:     #8fbcbb;
+    //
+    // White
+    white:      #e5e8f0;
+    lightwhite:     #eceff4;
+    //
+    // Bold, Italic, Underline
+    highlight:     bold #ffffff;
+}
+
+/*
+Window hierarchy
+┌────────────────────────────────────────────────────────────────────────────────────┐
+│ window {BOX:vertical}                                                              │
+│ ┌───────────────────────────────────────────────────────────────────────────────┐  │
+│ │ mainbox  {BOX:vertical}                                                       │  │
+│ │ ┌───────────────────────────────────────────────────────────────────────────┐ │  │
+│ │ │ inputbar {BOX:horizontal}                                                 │ │  │
+│ │ │ ┌─────────┐ ┌─┐ ┌───────────────────────────────┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │ │  │
+│ │ │ │ prompt  │ │:│ │ entry                         │ │#fr│ │ / │ │#ns│ │ci │ │ │  │
+│ │ │ └─────────┘ └─┘ └───────────────────────────────┘ └───┘ └───┘ └───┘ └───┘ │ │  │
+│ │ └───────────────────────────────────────────────────────────────────────────┘ │  │
+│ │                                                                               │  │
+│ │ ┌───────────────────────────────────────────────────────────────────────────┐ │  │
+│ │ │ message                                                                   │ │  │
+│ │ │ ┌───────────────────────────────────────────────────────────────────────┐ │ │  │
+│ │ │ │ textbox                                                               │ │ │  │
+│ │ │ └───────────────────────────────────────────────────────────────────────┘ │ │  │
+│ │ └───────────────────────────────────────────────────────────────────────────┘ │  │
+│ │                                                                               │  │
+│ │ ┌───────────────────────────────────────────────────────────────────────────┐ │  │
+│ │ │ listview                                                                  │ │  │
+│ │ │ ┌─────────────────────────────────────────────────────────────────────┐   │ │  │
+│ │ │ │ element                                                             │   │ │  │
+│ │ │ │ ┌─────────────────┐ ┌─────────────────────────────────────────────┐ │   │ │  │
+│ │ │ │ │element─icon     │ │element─text                                 │ │   │ │  │
+│ │ │ │ └─────────────────┘ └─────────────────────────────────────────────┘ │   │ │  │
+│ │ │ └─────────────────────────────────────────────────────────────────────┘   │ │  │
+│ │ └───────────────────────────────────────────────────────────────────────────┘ │  │
+│ │                                                                               │  │
+│ │ ┌───────────────────────────────────────────────────────────────────────────┐ │  │
+│ │ │  mode─switcher {BOX:horizontal}                                           │ │  │
+│ │ │ ┌───────────────┐   ┌───────────────┐  ┌──────────────┐ ┌───────────────┐ │ │  │
+│ │ │ │ Button        │   │ Button        │  │ Button       │ │ Button        │ │ │  │
+│ │ │ └───────────────┘   └───────────────┘  └──────────────┘ └───────────────┘ │ │  │
+│ │ └───────────────────────────────────────────────────────────────────────────┘ │  │
+│ └───────────────────────────────────────────────────────────────────────────────┘  │
+└────────────────────────────────────────────────────────────────────────────────────┘
+*/
+
+window {
+    height:   100%;
+    width: 30em;
+    location: west;
+    anchor:   west;
+    border:  0px 2px 0px 0px;
+    text-color: @text-color;
+    background-color: @background-color;
+}
+
+mainbox {
+    expand: true;
+    background-color: inherit;
+    spacing: 1em;
+}
+
+    inputbar {
+        background-color: inherit;
+        padding: 4px;
+        border: 0px 0px 2px 0px;
+	border-color: @dark;
+	children: [prompt, textbox-prompt-colon, entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator];
+    }
+    
+    	textbox-prompt-colon {
+	    expand: false;
+	    content: ":";
+	}
+
+	textbox-num-sep {
+	    expand: false;
+	    content: "/";
+	}
+    
+    listview {
+        padding: 0em 0.4em 0em 1em;
+        dynamic: false;
+        scrollbar: true;
+        lines: 0;
+    }
+    
+        scrollbar {
+            handle-color: @black;
+            handle-width: 0.4em;
+            padding: 0em 0em 0em 0.4em;
+        }
+        
+        element-text {
+            background-color: inherit;
+            text-color:       inherit;
+        }
+        
+        element selected  normal {
+            background-color: @blue;
+	    text-color: @dark;
+        }
+        element normal active {
+            text-color: @lightblue;
+        }
+        element normal urgent {
+            text-color: @lightred;
+        }
+        element alternate normal {
+	    background-color: @darkblack;
+        }
+        element alternate active {
+            text-color: @lightblue;
+        }
+        element alternate urgent {
+            text-color: @lightred;
+        }
+        element selected active {
+            background-color: @lightblue;
+            text-color: @dark;
+        }
+        element selected urgent {
+            background-color: @lightred;
+            text-color: @dark;
+        }
+
+mode-switcher {
+    border: 2px 0px 0px 0px;
+    background-color: @lightblack;
+    padding: 4px;
+}
+button selected {
+    border-color: @lightgreen;
+    text-color: @lightgreen;
+}
+error-message {
+    expand: true;
+    background-color: red;
+    border-color: darkred;
+    border: 2px;
+    padding: 1em;
+}

@@ -1,0 +1,7 @@
+configuration {
+	modi: "drun,filebrowser";
+	font: "JetBrains Mono 10";
+	//location: 3;
+	//yoffset: 28;
+	//xoffset: -4;
+}

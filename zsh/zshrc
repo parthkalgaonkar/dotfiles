@@ -1,0 +1,55 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/scarecrow/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# enable reverse search
+bindkey '^R' history-incremental-search-backward
+
+export EDITOR=vim
+export VISUAL=vim
+
+
+#---------------------------------------
+# Prompt setup
+#---------------------------------------
+autoload -Uz promptinit
+promptinit
+
+prompt_mytheme_setup() {
+	PS1="[%F{green}%n%F{blue}%m%f %B%2~%b]$ "
+}
+
+prompt_themes+=( mytheme )
+prompt mytheme
+
+
+#---------------------------------------
+# Set color stuff
+#---------------------------------------
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+
+# Path
+path+=("$HOME/.local/bin")
+
+#---------------------------------------
+# Set aliases
+#---------------------------------------
+alias ls="ls --color=auto"
+alias ll="ls -al"
+alias my="$EDITOR ~/.zshrc"
+alias smy=". ~/.zshrc"
+
+# ultralist aliases
+alias ul="ultralist"
+alias ula="ul add"
+alias ull="ul --unicode=false list"

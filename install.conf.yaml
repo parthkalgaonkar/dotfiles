@@ -1,0 +1,43 @@
+# Base configs
+- link:
+    ~/.bashrc:
+    ~/.cshrc:
+    ~/.tmux.conf:
+    ~/.gitconfig:
+    ~/.dir_colors:
+    ~/.config/:
+      path: app_config/**
+      glob: true
+
+# VIM stuff
+- create:
+  - ~/.vim
+- link:
+    ~/.vimrc:
+    ~/.vim/ftplugin: ftplugin
+- shell:
+  - command: 'git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
+    description: 'Cloning Vim package Manager (Vundle)' 
+    stdout: true
+  - command: 'vim +PluginInstall +qall'
+    description: 'Installing Vim plugins'
+    stdout: true
+
+# ZSH Stuff
+- link:
+    ~/.zshrc: zsh/zshrc
+    ~/.zprofile: zsh/zprofile
+    ~/.zshenv: zsh/zshenv
+
+# XMONAD/XMOBAR stuff
+- link:
+    ~/.xmonad/xmonad.hs:
+      create: true
+      path: xmonad/xmonad.hs
+    ~/.config/xmobar: xmonad/xmobar
+- shell:
+  - command: 'cd ~/.config/xmobar/ && ghci xmobar_cfg.hs'
+    description: 'Compiling xmobar config'
+    stdin: true
+    stdout: true
+    stderr: true

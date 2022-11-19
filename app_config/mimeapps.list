@@ -1,0 +1,8 @@
+[Added Associations]
+inode/directory=clifm.desktop;pcmanfm.desktop;
+x-scheme-handler/terminal=Alacritty.desktop;
+
+[Default Applications]
+image/*=sxiv.desktop;
+x-scheme-handler/terminal=Alacritty.desktop
+inode/directory=pcmanfm.desktop
