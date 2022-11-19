@@ -28,6 +28,7 @@ import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.Spacing (spacingWithEdge)  -- for margins around windows
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Hidden
+import XMonad.Layout.ResizableTile
 
 import XMonad.Actions.WithAll (killAll)         -- for killing all windows in ws
 import XMonad.Actions.CycleWS
@@ -159,6 +160,8 @@ myKeysAdd =
         , ("M-S-k", windows W.swapUp)                   -- swap up
         , ("M-h", sendMessage Shrink)                   -- shrink master area
         , ("M-l", sendMessage Expand)                   -- expand master area
+        , ("M-n", sendMessage MirrorShrink)
+        , ("M-u", sendMessage MirrorExpand)
         , ("M-,", sendMessage (IncMasterN 1))           -- +1 window in master
         , ("M-.", sendMessage (IncMasterN (-1)))        -- -1 window in master
         , ("M-f", sendMessage $ Toggle "full")          -- Switch to fullscreen
@@ -254,7 +257,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 tiled = renamed [Replace "tiled"]
         $ avoidStruts
         $ spacingWithEdge myMargins
-        $ ResizableTall 1 (3/100) (1/2)
+        $ ResizableTall 1 (3/100) (1/2) []
 
 horizontal = renamed [Replace "horizontal"]
         $ avoidStruts
